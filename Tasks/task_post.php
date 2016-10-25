@@ -22,17 +22,16 @@ $tmpPostOffice;
 
 foreach ($fileLines as $key => $value) 
 {
-	$csvData = explode(',', $value);
-	
-	if( isset($tmpPostOffice) && $csvData[3] !== $tmpPostOffice) 
-	{
-		$postalOfficesByRegion[$csvData[5]][] = [
-			'name' 	=> $csvData[3],
-			'zip' 	=> $csvData[1],
-			'area' 	=> getAreaFromZip($csvData[1])
-		];
-	}
-	$tmpPostOffice = $csvData[3];
+    $csvData = explode(',', $value);
+    if( isset($tmpPostOffice) && $csvData[3] !== $tmpPostOffice) 
+    {
+            $postalOfficesByRegion[$csvData[5]][] = [
+                    'name' 	=> $csvData[3],
+                    'zip' 	=> $csvData[1],
+                    'area' 	=> getAreaFromZip($csvData[1])
+            ];
+    }
+    $tmpPostOffice = $csvData[3];
 }
 
 function getRegionName($area)
@@ -56,5 +55,5 @@ array_shift($postalOfficesByRegion);
 ksort($postalOfficesByRegion);
 
 // Print functions
-echo PHP_EOL . getRegionName('Osijek') . PHP_EOL;
+echo getRegionName('Osijek') . PHP_EOL . PHP_EOL;
 print_r($postalOfficesByRegion);
