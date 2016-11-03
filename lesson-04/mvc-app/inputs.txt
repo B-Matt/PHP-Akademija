@@ -1,0 +1,12 @@
+ada,dada,dada,1,ada,dada,C
+ada,dada,dada,1,adad,ada,C
+ada,dada,dada,1,adad,ada,C
+ada,dada,dada,1,adad,ada,C
+ada,dada,dada,1,adad,ada,C
+ada,dada,dada,1,adad,ada,C
+ada,dada,dada,1,adad,ada,C
+ada,dada,dada,1,adad,ada,C
+ada,dada,dada,1,adad,ada,C
+ada,dada,dada,1,adad,ada,C
+ada,dada,dada,1,adad,ada,C
+ada,dada,dada,1,adad,ada,C

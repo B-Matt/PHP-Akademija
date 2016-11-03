@@ -1,0 +1,28 @@
+<header>
+    <ul>
+        <li><a href="/index.php">Naslovnica</a></li>
+        <li><a href="index">Prijavi se</a></li>
+        <li><a href="admin">Login (Za admine)</a></li>
+    </ul>
+</header>
+
+<main>
+    <?php if(!isset($message)): ?>
+    <h1>Prijavite se u admin panel</h1>
+
+    <form method="post" action="submit" enctype="multipart/form-data">
+        <label for="name">Username</label><br>
+        <input id="login-user" name="login-user" required/><br>
+        <label for="mail">Password</label><br>
+        <input id="login-password" name="login-password" type="password" required /><br>
+        <br><br>
+        <input type="submit" value="Submit" name="submit">
+    </form>
+    <?php else: ?>
+    <p><?php echo $message; ?>
+    <?php endif; ?>
+</main>
+
+<footer>
+    <p>&copy; PHP Akademija, 2016</p>
+</footer>

@@ -1,0 +1,68 @@
+<header>
+    <ul>
+        <li><a href="index.php">Naslovnica</a></li>
+        <li><a href="form">Prijavi se</a></li>
+        <li><a href="form/admin">Login (Za admine)</a></li>
+    </ul>
+</header>
+
+<main>
+    <?php if(!isset($message)): ?>
+    <h1>Prijavnica za PHP akademiju</h1>
+
+    <p>Prijavnica za prvo osječko izdanje PHP akademije koju Inchoo pokreće u suradnji s FERITom.</p>
+    <p>Prijave traju do 10.10., pa požuri i svoje mjesto rezerviraj već sad.</p>
+    <p>Više informacija na:
+        <a href="http://inchoo.hr/php-akademija-2016/" target="_blank">http://inchoo.hr/php-akademija-2016/</a>
+    </p>
+
+    <form method="post" action="submit" enctype="multipart/form-data">
+        <label for="name">Ime i prezime</label><br>
+        <input id="name" name="name" required/><br>
+        <label for="mail">Mail adresa</label><br>
+        <input id="mail" name="mail" type="mail" required /><br>
+        <label for="smjer">Smjer</label><br>
+        <input id="smjer" name="smjer" required /><br>
+        
+        <br>
+        <label>Godina studija</label><br>
+        <input name="godina" type="radio" value="1">1<br>
+        <input name="godina" type="radio" value="2">2<br>
+        <input name="godina" type="radio" value="3">3<br>
+        
+        <br>
+        <label for="motivation">Što te motiviralo da se prijaviš?</label><br>
+        <textarea id="motivation" name="motivation"></textarea>
+        <br>
+
+        <label for="knowlage">Imaš li predznanje vezano uz web development?</label><br>
+        <textarea name="knowlage" id="knowlage"></textarea>
+        
+        <br>
+        <lable for="lang">U kojim jezicima si do sada programirao?</lable><br>
+        <input name="lang" type="checkbox" value="C" />C<br>
+        <input name="lang" type="checkbox" value="C#" />C#<br>
+        <input name="lang" type="checkbox" value="C++" />C++<br>
+        <input name="lang" type="checkbox" value="PHP" />PHP<br>
+        
+        <br>
+        Uploadaj primjer svoga koda:
+        <input type="file" name="primjer" id="primjer">
+        <br><br>
+        <input type="submit" value="Submit" name="submit">
+    </form>
+    <?php else: ?>
+    <p>
+        <?php 
+            echo $message;
+            if(strpos($_SERVER['REQUEST_URI'], "thankyou")) {
+                header( "refresh:5;url=index" );
+            }
+        ?>
+    </p>
+    <?php endif; ?>
+</main>
+
+<footer>
+    <p>&copy; PHP Akademija, 2016</p>
+</footer>
